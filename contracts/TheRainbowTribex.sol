@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 
-contract TheRainbowTribe is ERC721A, Ownable, ReentrancyGuard {
+contract TheRainbowTribeX is ERC721A, Ownable, ReentrancyGuard {
   using Strings for uint256;
 
   string public baseURI;
