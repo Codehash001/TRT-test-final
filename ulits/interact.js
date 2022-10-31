@@ -10,7 +10,7 @@ import { config } from '../dapp.config'
 
 const web3 = createAlchemyWeb3(process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL)
 
-const contract = require('../artifacts/contracts/TheRainbowTribeX.sol/TheRainbowTribeX.json')
+const contract = require('../artifacts/contracts/TheRainbowTribex.sol/TheRainbowTribeX.json')
 const nftContract = new web3.eth.Contract(contract.abi, config.contractAddress)
 
 // Calculate merkle root from the whitelist array
