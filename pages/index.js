@@ -45,7 +45,7 @@ export default function Mint(){
       setIsValid(isValid)
 
       setMaxMintAmount(
-        isWlMint ? config.WlMaxMintAmount : config.maxMintAmount
+        isWlMint && isValid ? config.maxPerTxWL : config.maxMintAmount
       )
       
       
@@ -87,9 +87,7 @@ useEffect(() => {
     if (mintAmount < maxMintAmount) {
       setMintAmount(mintAmount + 1)
     }
-   if ( isWlMint < config.maxPerTxWL) {
-      setMintAmount(mintAmount + 1)
-    }
+
   }
 
   const decrementMintAmount = () => {
@@ -218,7 +216,7 @@ useEffect(() => {
                  
                 </div>  
                 <p className="text-sm text-gray-100 tracking-widest mt-5">
-                  Max Mint Amount Per Wallet: {paused ? '0' : isWlMint ? config.WlMaxMintAmount : config.maxMintAmount}
+                  Max Mint Amount Per Wallet: {paused ? '0' : isWlMint && isValid ? config.WlMaxMintAmount : config.maxMintAmount}
                 </p>
 
                 <div className="border-t border-b py-4 mt-9 w-full">
